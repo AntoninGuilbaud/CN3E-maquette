@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@100..900&family=Unbounded:wght@200..900&display=swap');
+
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+}
+
+nav {
+    background: white;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 100px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    transition: .5s;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+a.active,
+a:hover {
+    background-color: #49a83e;
+    color: white;
+}
+
+#id-inscription {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    transition: .5s;
+    border-radius: 20px;
+}
+
+#id-inscription:hover {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 90px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/*--------------------------*/
+/*----- MEDIA QUERRY -----*/
+/*--------------------------*/
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        top: 80px;
+        transition: all .5s;
+        text-align: center;
+        background-color: #2c3e50;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #49a83e;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+/*------------------ page - Présentation*/
+
+#page-presentation {
+    position: relative;
+    height: 50vh;
+}
+
+#page-presentation::before {
+    content: "";
+    background-image: url('image/background-page-presentation.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    /* Place le fond derrière le texte */
+}
+
+#page-presentation-contenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    /* Place le texte devant l'arrière-plan */
+}
+
+#page-presentation-contenu h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    filter: drop-shadow(0px 0px 60px #000000);
+}
+
+#page-presentation-contenu h1 span {
+    color: #49a83e;
+}
+
+/*------------------ page - video*/
+
+#video-presentation {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+/*------------------ page - presentationtexte*/
+#page-presentation-texte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 12vw;
+    gap: 20px;
+    text-align: center;
+}
+
+#page-presentation-texte h2 {
+    font-size: 40px;
+    color: #49a83e;
+    font-weight: 500;
+
+}
+
+#page-presentation-texte p {
+    font-size: 19px;
+}
+
+#page-presentation-texte span {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/*------------------ page - parcours*/
+#page-parcours {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 12vw;
+}
+
+.parcours-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: #49a83e;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.trace-gpx {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.trace-gpx div {
+    border-radius: 20px;
+}
+
+.description-parcours {
+    flex: 1;
+    text-align: left;
+}
+
+.description-parcours h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.description-parcours p {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.description-parcours button {
+    background-color: white;
+    color: #49a83e;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.description-parcours button:hover {
+    background-color: black;
+    color: white;
+}
+
+#parcours-18km {
+    flex-direction: row-reverse;
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3a8630;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    transition: .5s;
+}
+
+.download-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*------------------ page - inscription*/
+#page-inscription {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 12vw;
+    text-align: center;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(73, 168, 62, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+#page-inscription p {
+    font-size: 25px;
+    color: black;
+    font-weight: 400;
+}
+
+#page-inscription div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#page-inscription a {
+    background-color: white;
+    color: black;
+    font-size: 17px;
+    padding: 20px;
+    border-radius: 3px;
+    transition: .5s;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#page-inscription a:hover {
+    background-color: black;
+    color: white;
+}
+
+/*------------------ page - partenaires*/
+#page-partenaires {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 12vw;
+    text-align: center;
+    width: 100%;
+    background: #49a83e;
+}
+
+#page-partenaires h2 {
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+}
+
+.partenaire {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partenaire img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.partenaire img:hover {
+    transform: scale(1.1);
+}
+
+/*------------------ page - footer*/
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(73,168,62,1) 0%, rgba(255,255,255,1) 100%);
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+    list-style: none;
+}
+
+/* Styles spécifiques pour les icônes de réseaux sociaux dans le footer */
+.footer .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: .5s; /* Enlève la transition */
+}
+
+.footer .social-icon__link:hover {
+    color: black;
+    transform: rotate(10deg);
+    background-color: transparent; /* Assure qu'il n'y ait pas de fond ajouté */
+}
+
+
+.footer p {
+    color: black;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+    font-weight: 500;
+}

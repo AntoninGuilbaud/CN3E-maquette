@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CN3E</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Script de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Plugin GPX pour Leaflet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <ion-icon name="reorder-four-outline"></ion-icon>
+        </label>
+        <img src="image/logo.png" class="logo">
+        <ul>
+            <li><a class="active" href="#">Accueil</a></li>
+            <li><a href="#">Infos</a></li>
+            <li><a href="#">Parcours</a></li>
+            <li><a href="#">Résultats</a></li>
+            <li><a href="#">Partenaires</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a id="id-inscription" href="#">Inscription</a></li>
+        </ul>
+    </nav>
+
+    <section id="page-presentation">
+        <div id="page-presentation-contenu">
+            <div>
+                <h1>La <span>C</span>ourse <span>N</span>ature des <span>3</span> <span>É</span>tangs</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-presentation">
+        <div style="text-align: center;">
+            <iframe
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcn3ecs%2Fvideos%2F943716383238065%2F&show_text=false&width=269&t=0"
+                width="269" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen="true"></iframe>
+        </div>
+        <div>
+            <iframe
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcn3ecs%2Fvideos%2F2785909274960846%2F&show_text=false&width=267&t=0"
+                width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen="true"></iframe>
+
+        </div>
+    </section>
+
+    <section id="page-presentation-texte">
+        <h2>Présentation</h2>
+        <p>Chaque année depuis 2015, le <span>Running Club de Colombier-Saugnieu</span> et ses bénévoles organisent une
+            grande course autour des trois étangs de la ville : La <span>Course Nature des 3 Étangs</span> (CN3E).<br>
+            Deux parcours sont prévus, <span>9km</span> et <span>18km</span> : enfant ou adulte, vous êtes tous la
+            bienvenue !</p>
+    </section>
+
+    <section id="page-parcours">
+        <div id="parcours-9km" class="parcours-section">
+            <div id="trace-gpx-9km" class="trace-gpx">
+                <div id="map-9km" style="width: 100%; height: 300px;"></div>
+            </div>
+            <div id="description-parcours-9km" class="description-parcours">
+                <h2>Parcours 9km</h2>
+                <p>Le parcours de 9km est accessible à tous, que vous soyez un coureur débutant ou confirmé. Il vous
+                    fera découvrir les trois étangs de la ville de Colombier-Saugnieu.</p>
+                <button id="btn-parcours-9km">En savoir plus</button>
+                <a href="GPX/CN3E-9KM" download="CN3E-9KM.gpx" class="download-button">Télécharger le tracé GPX</a>
+            </div>
+        </div>
+
+        <div id="parcours-18km" class="parcours-section">
+            <div id="trace-gpx-18km" class="trace-gpx">
+                <div id="map-18km" style="width: 100%; height: 300px;"></div>
+            </div>
+            <div id="description-parcours-18km" class="description-parcours">
+                <h2>Parcours 18km</h2>
+                <p>Le parcours de 18km est plus exigent ! Il vous fera également découvrir les trois étangs de la ville
+                    de Colombier-Saugnieu.</p>
+                <button id="btn-parcours-18km">En savoir plus</button>
+                <a href="GPX/CN3E-18KM" download="CN3E-18KM.gpx" class="download-button">Télécharger le tracé GPX</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-inscription">
+        <p>Les inscriptions pour la CN3E 2025 sont ouvertes !</p>
+        <div>
+            <a href="https://www.chronometrage.com/events/coursenaturedes3etangs2024" class="inscription-button"
+                target="_blank">Inscription</a>
+        </div>
+    </section>
+
+    <section id="page-partenaires">
+        <h2>Nos partenaires</h2>
+        <div class="partenaire">
+            <div id="partenaire-img">
+                <img src="image/partenaire/kikourvite.png" alt="Kikourvite">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/originevegetal.png" alt="originevegetal">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/artebat.png" alt="artebat">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/leclerc.png" alt="leclerc">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/carplastiques.png" alt="carplastiques">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/intersport.png" alt="intersport">
+            </div>
+            <div id="partenaire-img">
+                <img src="image/partenaire/vival.png" alt="vival">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        
+        <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/cn3ecs">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+        </ul>
+        <p>&copy;2024 by Antonin Guilbaud | Tous droits réservés</p>
+    </footer>
+
+
+
+
+
+    <script src="js.js"></script>
+
+
+</body>
+
+</html>
